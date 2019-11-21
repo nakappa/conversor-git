@@ -10,6 +10,11 @@ namespace Conversor_BIN_DEC_HEX
     {
         static void Main(string[] args)
         {
+            Bina binar = new Bina();
+            binar.digito = Console.ReadLine();
+            binar.deci();
+
+            Console.ReadLine();
         }
     }
 }
