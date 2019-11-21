@@ -50,8 +50,16 @@ namespace System //Conversor_BIN_DEC_HEX.Conversores
             {
                 y += x[i];
             }
-
-            Console.WriteLine("Número decimal: " + y);
         }
+
+        public void hexa()
+        {
+            deci();
+            Deci dec = new Deci();
+            dec.digito = y.ToString();
+            dec.hexa();
+
+        }
+
     }
 }

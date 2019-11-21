@@ -13,6 +13,8 @@ namespace Conversor_BIN_DEC_HEX
             Bina binar = new Bina();
             binar.digito = Console.ReadLine();
             binar.deci();
+            Console.WriteLine("Número decimal: " + binar.y);
+            binar.hexa();
 
             Console.ReadLine();
         }
