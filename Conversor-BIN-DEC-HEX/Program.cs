@@ -10,14 +10,49 @@ namespace Conversor_BIN_DEC_HEX
     {
         static void Main(string[] args)
         {
-            //ConvertBin binar = new ConvertBin();
-            //binar.convertBin();
+            Console.Write("Escolha 1 (BINÁRIO), 2 (DECIMAL), 3 (HEXADECIMAL) ou 4 (SAIR): ");
+            int contador = 0;
+            while (contador == 0)
+            {
+                int escolha = int.Parse(Console.ReadLine());
+                    if (escolha < 1 || escolha > 4)
+                    {
+                        Console.Write("FAVOR DIGITAR UM VALOR ENTRE 1 À 4!!! Qual a sua escolha [1 (BINÁRIO), 2(DECIMAL), 3(HEXADECIMAL) ou 4(SAIR)]? ");
+                        contador = 0;
+                    }
 
-            //ConvertDec decim = new ConvertDec();
-            //decim.convertDec();
+                    if (escolha == 1)
+                    {
+                        ConvertBin conBin = new ConvertBin();
+                        conBin.convertBin();
+                        contador = 0;
+                        Console.Write("Escolha 1 (BINÁRIO), 2 (DECIMAL), 3 (HEXADECIMAL) ou 4 (SAIR): ");
+                    }
 
-            ConvertHex hexad = new ConvertHex();
-            hexad.convertHex();
+                    if (escolha == 2)
+                    {
+                        ConvertDec conDec = new ConvertDec();
+                        conDec.convertDec();
+                        contador = 0;
+                        Console.Write("Escolha 1 (BINÁRIO), 2 (DECIMAL), 3 (HEXADECIMAL) ou 4 (SAIR): ");
+                    }
+
+                    if (escolha == 3)
+                    {
+                        ConvertHex conHex = new ConvertHex();
+                        conHex.convertHex();
+                        contador = 0;
+                        Console.Write("Escolha 1 (BINÁRIO), 2 (DECIMAL), 3 (HEXADECIMAL) ou 4 (SAIR): ");
+                    }
+
+                    if (escolha == 4)
+                    {
+                        contador = 1;
+                        Console.WriteLine();
+                        Console.WriteLine("ADEUS!!!");
+                    }
+
+            }
 
             Console.ReadLine();
         }
