@@ -14,7 +14,9 @@ namespace Conversor_BIN_DEC_HEX
             int contador = 0;
             while (contador == 0)
             {
-                int escolha = int.Parse(Console.ReadLine());
+                try
+                {
+                    int escolha = int.Parse(Console.ReadLine());
                     if (escolha < 1 || escolha > 4)
                     {
                         Console.Write("FAVOR DIGITAR UM VALOR ENTRE 1 À 4!!! Qual a sua escolha [1 (BINÁRIO), 2(DECIMAL), 3(HEXADECIMAL) ou 4(SAIR)]? ");
@@ -51,6 +53,15 @@ namespace Conversor_BIN_DEC_HEX
                         Console.WriteLine();
                         Console.WriteLine("ADEUS!!!");
                     }
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine();
+                    Console.Write("FAVOR DIGITAR UM VALOR ENTRE 1 À 4!!! Qual a sua escolha [1 (BINÁRIO), 2 (DECIMAL), 3 (HEXADECIMAL) ou 4 (SAIR)]? ");
+                    contador = 0;
+                }
 
             }
 
