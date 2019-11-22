@@ -47,6 +47,7 @@
     <Compile Include="Conversores\Deci.cs" />
     <Compile Include="Conversores\Hexa.cs" />
     <Compile Include="Functions\ConvertBin.cs" />
+    <Compile Include="Functions\ConvertDec.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

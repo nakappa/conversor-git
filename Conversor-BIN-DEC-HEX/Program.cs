@@ -10,8 +10,11 @@ namespace Conversor_BIN_DEC_HEX
     {
         static void Main(string[] args)
         {
-            ConvertBin binar = new ConvertBin();
-            binar.convertBin();
+            //ConvertBin binar = new ConvertBin();
+            //binar.convertBin();
+
+            ConvertDec binar = new ConvertDec();
+            binar.convertDec();
 
             Console.ReadLine();
         }
