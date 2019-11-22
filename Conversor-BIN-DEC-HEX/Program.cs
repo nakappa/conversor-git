@@ -13,8 +13,11 @@ namespace Conversor_BIN_DEC_HEX
             //ConvertBin binar = new ConvertBin();
             //binar.convertBin();
 
-            ConvertDec binar = new ConvertDec();
-            binar.convertDec();
+            //ConvertDec decim = new ConvertDec();
+            //decim.convertDec();
+
+            ConvertHex hexad = new ConvertHex();
+            hexad.convertHex();
 
             Console.ReadLine();
         }
