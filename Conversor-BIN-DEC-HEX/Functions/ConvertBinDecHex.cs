@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace System //Conversor_BIN_DEC_HEX.Functions
+﻿namespace System //Conversor_BIN_DEC_HEX.Functions
 {
-    class ConvertBin
+    class ConvertBinDecHex
     {
-        public void convertBin()
+        public void ConvertDecHex()
         {
             int contador = 0;
             Console.WriteLine();
             Console.Write("Digite um número binário: ");
-            Bina binar = new Bina();
-            binar.digito = Console.ReadLine();
-            int n = binar.digito.Length;
-            char[] s = new char[n];
-            s = binar.digito.ToCharArray();
+            ConversorDecimal dec = new ConversorDecimal {digito = Console.ReadLine()};
+            ConversorHexadecimal hex = new ConversorHexadecimal();
+            char[] s = dec.digito.ToCharArray();
 
             while (contador == 0)
             {
@@ -31,28 +23,27 @@ namespace System //Conversor_BIN_DEC_HEX.Functions
                     Console.WriteLine("FAVOR DIGITAR ALGARISMOS ENTRE 0 OU 1!!!");
                     Console.WriteLine();
                     Console.Write("Digite um número binário: ");
-                    binar.digito = Console.ReadLine();
+                    dec.digito = Console.ReadLine();
                     Console.WriteLine();
-                    Console.WriteLine("Número digitado é: " + binar.digito);
-                    n = binar.digito.Length;
-                    s = new char[n];
-                    s = binar.digito.ToCharArray();
+                    Console.WriteLine("Número digitado foi: " + dec.digito);
+                    s = dec.digito.ToCharArray();
                     contador = 0;
                 }
                 else
                 {
                     Console.WriteLine();
-                    Console.Write("Número digitado é: " + binar.digito);
+                    Console.Write("Número digitado foi: " + dec.digito);
                     contador = 1;
                 }
             }
 
             Console.WriteLine();
-            binar.deci();
-            Console.WriteLine("Número decimal: " + binar.y);
-            binar.hexa();
+            dec.DeciBin();
+            hex.digito = dec.y.ToString();
+            hex.Hexa();
             Console.WriteLine();
             Console.WriteLine();
         }
     }
 }
+

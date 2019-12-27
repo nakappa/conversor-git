@@ -43,12 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conversores\Bina.cs" />
-    <Compile Include="Conversores\Deci.cs" />
-    <Compile Include="Conversores\Hexa.cs" />
-    <Compile Include="Functions\ConvertBin.cs" />
-    <Compile Include="Functions\ConvertDec.cs" />
-    <Compile Include="Functions\ConvertHex.cs" />
+    <Compile Include="Conversores\ConversorBinario.cs" />
+    <Compile Include="Conversores\ConversorDecimal.cs" />
+    <Compile Include="Conversores\ConversorHexadecimal.cs" />
+    <Compile Include="Functions\ConvertDecBinHex.cs" />
+    <Compile Include="Functions\ConvertBinDecHex.cs" />
+    <Compile Include="Functions\ConvertHexDecBin.cs" />
+    <Compile Include="Functions\Decisao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

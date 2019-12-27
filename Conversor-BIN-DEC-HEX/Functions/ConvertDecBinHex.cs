@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace System //Conversor_BIN_DEC_HEX.Functions
+﻿namespace System //Conversor_BIN_DEC_HEX.Functions
 {
-    class ConvertDec
+    class ConvertDecBinHex
     {
-        public void convertDec()
+        public void ConvertBinHex()
         {
             int contador = 0;
             Console.WriteLine();
             Console.Write("Digite um número decimal: ");
-            Deci decim = new Deci();
-            decim.digito = Console.ReadLine();
-            int n = decim.digito.Length;
-            char[] s = new char[n];
-            s = decim.digito.ToCharArray();
+            ConversorBinario bin = new ConversorBinario { digito = Console.ReadLine() };
+            ConversorHexadecimal hex = new ConversorHexadecimal();
+            char[] s = bin.digito.ToCharArray();
 
             while (contador == 0)
             {
@@ -31,25 +23,26 @@ namespace System //Conversor_BIN_DEC_HEX.Functions
                     Console.WriteLine("FAVOR DIGITAR ALGARISMOS ENTRE 0 À 9!!!");
                     Console.WriteLine();
                     Console.Write("Digite um número decimal: ");
-                    decim.digito = Console.ReadLine();
+                    bin.digito = Console.ReadLine();
                     Console.WriteLine();
-                    Console.WriteLine("Número digitado é: " + decim.digito);
-                    n = decim.digito.Length;
-                    s = new char[n];
-                    s = decim.digito.ToCharArray();
+                    Console.WriteLine("Número digitado foi: " + bin.digito);
+                    s = bin.digito.ToCharArray();
                     contador = 0;
                 }
+
                 else
                 {
                     Console.WriteLine();
-                    Console.Write("Número digitado é: " + decim.digito);
+                    Console.Write("Número digitado é: " + bin.digito);
                     contador = 1;
                 }
             }
 
-            decim.bina();
             Console.WriteLine();
-            decim.hexa();
+            bin.Bina();
+            Console.WriteLine();
+            hex.digito = bin.digito;
+            hex.Hexa();
             Console.WriteLine();
             Console.WriteLine();
         }

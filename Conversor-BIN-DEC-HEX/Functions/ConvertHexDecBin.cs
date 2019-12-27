@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace System //Conversor_BIN_DEC_HEX.Functions
+﻿namespace System //Conversor_BIN_DEC_HEX.Functions
 {
-    class ConvertHex
+    class ConvertHexDecBin
     {
-        public void convertHex()
+        public void ConvertBinDec()
         {
             int contador = 0;
             Console.WriteLine();
             Console.Write("Digite um número hexadecimal: ");
-            Hexa hexad = new Hexa();
-            hexad.digito = Console.ReadLine();
-            int n = hexad.digito.Length;
-            char[] s = new char[n];
-            s = hexad.digito.ToCharArray();
+            ConversorDecimal dec = new ConversorDecimal { digito = Console.ReadLine() };
+            ConversorBinario bin = new ConversorBinario();
+            char[] s = dec.digito.ToCharArray();
 
             while (contador == 0)
             {
@@ -31,27 +23,27 @@ namespace System //Conversor_BIN_DEC_HEX.Functions
                     Console.WriteLine("FAVOR DIGITAR ALGARISMOS ENTRE 0 ATÉ 9 E OU A ATÉ F!!!");
                     Console.WriteLine();
                     Console.Write("Digite um número hexadecimal: ");
-                    hexad.digito = Console.ReadLine();
+                    dec.digito = Console.ReadLine();
                     Console.WriteLine();
-                    Console.WriteLine("Número digitado é: " + hexad.digito);
-                    n = hexad.digito.Length;
-                    s = new char[n];
-                    s = hexad.digito.ToCharArray();
+                    Console.WriteLine("Número digitado é: " + dec.digito.ToUpper());
+                    s = dec.digito.ToCharArray();
                     contador = 0;
                 }
+
                 else
                 {
                     Console.WriteLine();
-                    Console.Write("Número digitado é: " + hexad.digito);
+                    Console.Write("Número digitado é: " + dec.digito.ToUpper());
                     contador = 1;
                 }
             }
 
             Console.WriteLine();
-            hexad.bina();
+            dec.DeciHex();
             Console.WriteLine();
-            hexad.deci();
-            Console.WriteLine("Número decimal: " + hexad.y);
+            bin.digito = dec.y.ToString();
+            bin.Bina();
+            Console.WriteLine();
             Console.WriteLine();
         }
     }

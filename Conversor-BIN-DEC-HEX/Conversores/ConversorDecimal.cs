@@ -1,27 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace System //Conversor_BIN_DEC_HEX.Conversores
+﻿namespace System //Conversor_BIN_DEC_HEX.Conversores
 {
-    class Hexa
+    class ConversorDecimal
     {
-        public List<int> list = new List<int>();
         public string digito;
-        public int valor = 0;
-        public int cont = 0;
         public double y;
-        public int giro = 0;
 
-        public void deci()
+        public void DeciBin()
         {
+            int valor;
+            int giro = 0;
             int n = digito.Length;
-            char[] s = new char[n];
-            s = digito.ToCharArray();
+            char[] s = digito.ToCharArray();
             double[] x = new double[n];
+            int z;
 
             foreach (char w in s)
             {
-                int z = giro;
+                z = giro;
+                y = n - giro - 1;
+
+                switch (s[z])
+                {
+                    case '0':
+                        valor = 0;
+                        break;
+
+                    default:
+                        valor = 1;
+                        break;
+                }
+                x[z] = valor * Math.Pow(2, y);
+
+                giro++;
+            }
+
+            y = 0;
+
+            for (int i = 0; i < n; i++) y += x[i];
+
+            Console.WriteLine("Convertido em decimal é: " + y);
+        }
+
+        public void DeciHex()
+        {
+            int valor;
+            int giro = 0;
+            int n = digito.Length;
+            char[] s = digito.ToCharArray();
+            double[] x = new double[n];
+            int z;
+
+            foreach (char w in s)
+            {
+                z = giro;
                 y = n - giro - 1;
 
                 switch (s[z])
@@ -115,23 +146,11 @@ namespace System //Conversor_BIN_DEC_HEX.Conversores
                 giro++;
             }
 
-            giro = 0;
             y = 0;
 
-            for (int i = 0; i < n; i++)
-            {
-                y += x[i];
-            }
+            for (int i = 0; i < n; i++) y += x[i];
+
+            Console.Write("Convertido em decimal é: " + y);
         }
-
-        public void bina()
-        {
-            deci();
-            Deci bina = new Deci();
-            bina.digito = y.ToString();
-            bina.bina();
-
-        }
-
     }
 }

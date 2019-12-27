@@ -1,50 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace System //Conversor_BIN_DEC_HEX
+namespace System //Conversor_BIN_DEC_HEX.Conversores
 {
-    class Deci
+    class ConversorHexadecimal
     {
-        public List<int> list = new List<int>();
-        public List<string> list2 = new List<string>();
+        public List<string> list = new List<string>();
         public string digito;
-        public string s;
-        public int valor;
-        public int aux;
-        public int resto;
 
-        public void bina()
+        public void Hexa()
         {
-            valor = int.Parse(digito);
-            Console.WriteLine();
-
-            while (valor != 0)
-            {
-                int resultado = valor / 2;
-                resto = valor % 2;
-                aux = resultado;
-                valor = aux;
-                list.Insert(0, resto);
-            }
-
-            Console.Write("Número binário: ");
-
-            foreach (int obj in list)
-            {
-                Console.Write(obj);
-            }
-        }
-
-        public void hexa()
-        {
-            valor = int.Parse(digito);
+            int valor = int.Parse(digito);
             while (valor != 0)
             {
                 int resultado = valor / 16;
-                resto = valor % 16;
-                aux = resultado;
+                int resto = valor % 16;
+                int aux = resultado;
                 valor = aux;
-                s = resto.ToString();
+                string s = resto.ToString();
+
                 switch (s)
                 {
                     case "0":
@@ -112,11 +85,11 @@ namespace System //Conversor_BIN_DEC_HEX
                         break;
 
                 }
-                list2.Insert(0, s);
+                list.Insert(0, s);
             }
 
-            Console.Write("Número hexadecimal: ");
-            foreach (string obj in list2)
+            Console.Write("Convertido em hexadecimal é: ");
+            foreach (string obj in list)
             {
                 Console.Write(obj);
             }
